@@ -60,13 +60,7 @@ module Rack
 
       # http://tools.ietf.org/html/draft-hodges-strict-transport-sec-02
       def hsts_headers
-        if @hsts
-          value = "max-age=#{@hsts[:expires]}"
-          value += "; includeSubDomains" if @hsts[:subdomains]
-          { 'Strict-Transport-Security' => value }
-        else
-          {}
-        end
+        {}
       end
 
       def flag_cookies_as_secure!(headers)
