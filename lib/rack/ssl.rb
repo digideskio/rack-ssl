@@ -55,7 +55,7 @@ module Rack
         headers    = hsts_headers.merge('Content-Type' => 'text/html',
                                         'Location'     => url.to_s)
 
-        [301, headers, []]
+        [302, headers, []]
       end
 
       # http://tools.ietf.org/html/draft-hodges-strict-transport-sec-02
